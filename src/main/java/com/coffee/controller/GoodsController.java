@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/goods")
-public class goodsController {
+public class GoodsController {
 
     @Autowired
     IUserService userService;
