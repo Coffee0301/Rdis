@@ -4,7 +4,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.coffee.mapper.GoodsMapper;
 import com.coffee.pojo.Goods;
 import com.coffee.service.IGoodsService;
+import com.coffee.vo.GoodsVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +20,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements IGoodsService {
+    @Autowired
+    GoodsMapper goodsMapper;
 
+    @Override
+    public List<GoodsVo> findGoodsList() {
+        return goodsMapper.findGoodsList();
+    }
 }
