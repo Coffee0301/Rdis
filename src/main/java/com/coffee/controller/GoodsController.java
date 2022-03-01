@@ -20,16 +20,10 @@ public class GoodsController {
     @Autowired
     IUserService userService;
 
+//
     @RequestMapping("/toList")
-    public String toList(Model model, HttpServletResponse response,
-                         HttpServletRequest request,
-                         @CookieValue(value = "userTicket",required = false)
-                                     String ticket){
-        if(StringUtils.isEmpty(ticket)){
-            return "login";
-        }
-        User user =userService.getUserByCookie(ticket, request, response);
-        if (user==null){
+    public String toList(Model model,User user){
+        if (null == user){
             return "login";
         }
         model.addAttribute("user",user);
