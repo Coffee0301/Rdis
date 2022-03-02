@@ -35,4 +35,22 @@
         left join t_seckill_goods as sg on g.id=sg.goods_id
     </select>
 
+    <select id="findGoodsById" resultType="com.coffee.vo.GoodsVo">
+        select
+        g.id,
+        g.goods_name,
+        g.goods_title,
+        g.goods_img,
+        g.goods_detail,
+        g.goods_price,
+        g.goods_stock,
+        sg.seckill_price,
+        sg.stock_count,
+        sg.start_time,
+        sg.end_time
+        from t_goods as g
+        left join t_seckill_goods as sg on g.id=sg.goods_id
+        where g.id=#{goodsId}
+    </select>
+
 </mapper>
