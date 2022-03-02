@@ -14,72 +14,73 @@
     <script type="text/javascript" src="/js/common.js"></script>
 </head>
 <body>
-<div class="panel panel-default">秒杀商品详情
+<div class="panel panel-default">
     <div class="panel panel-heading">秒杀商品详情</div>
     <table class="table">
         <tr>
             <td>商品名称</td>
-            <td th:text="${goods.goodsName}"></td>
+            <td colspan="3" th:text="${goods.goodsName}"></td>
         </tr>
         <tr>
             <td>商品图片</td>
-            <td> <img th:src="@{${goods.goodsImg}}" width="100" height="100"></td>
+            <td colspan="3"> <img th:src="@{${goods.goodsImg}}" width="100" height="100"></td>
         </tr>
         <tr>
             <td>秒杀开始时间</td>
             <td th:text="${#dates.format(goods.startTime,'YYYY-MM-DD HH:mm:ss')}"></td>
+            <td id="seckillTip">
+                <input type="hidden" id="remainSeconds" th:value="${remainSeconds}">
+                <span th:if="${seckillStatus eq 0}">秒杀倒计时：<span th:text="${remainSeconds}">秒</span> </span>
+                <span th:if="${seckillStatus eq 1}">秒杀中</span>
+                <span th:if="${seckillStatus eq 2}">秒杀已结束</span>
+            </td>
+            <td>
+                <form id="seckillFrom" method="post" action="/seckill/doSeckill">
+                    <button class="btn btn-primary btn-block" type="submit" id="buyButton">立即秒杀</button>
+                    <input type="hidden" name="goodsId" th:value="${goods.id}">
+                </form>
+            </td>
         </tr>
         <tr>
             <td>原价</td>
-            <td th:text="${goods.goodsPrice}"></td>
+            <td colspan="3" th:text="${goods.goodsPrice}"></td>
         </tr>
         <tr>
             <td>秒杀价</td>
-            <td th:text="${goods.seckillPrice}"></td>
+            <td colspan="3" th:text="${goods.seckillPrice}"></td>
         </tr>
         <tr>
             <td>库存数量</td>
-            <td th:text="${goods.stockCount}"></td>
+            <td colspan="3" th:text="${goods.stockCount}"></td>
         </tr>
     </table>
 </div>
-<!--<table class="table" id="goods">-->
-<!--    <tr>-->
-<!--        <td>商品名称</td>-->
-<!--        <td colspan="3" id="goodsName"></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>商品图片</td>-->
-<!--        <td colspan="3"><img id="goodsImg"></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>秒杀开始时间</td>-->
-<!--        <td id="startTime"></td>-->
-<!--        <td>-->
-<!--           <span id="seckillTip"></span>-->
-<!--            <input type="hidden" id="remainSeconds">-->
-<!--        </td>-->
-<!--        <td>-->
-<!--            <form id="seckillForm" method="post" action="/seckill/doSeckill">-->
-<!--                <button class="btn btn-primary btn-block" type="submit" id="buyButton">立即秒杀</button>-->
-<!--                <input type="hidden" name="goodsId" id="goodsId">-->
-<!--            </form>-->
-<!--        </td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>商品原价</td>-->
-<!--        <td colspan="3" id="goodsPrice"></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>秒杀价格</td>-->
-<!--        <td colspan="3" id="seckillPrice"></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>库存</td>-->
-<!--        <td colspan="3" id="stockCount"></td>-->
-<!--    </tr>-->
-<!--</table>-->
-</body>
+
+<script>
+    $(function(){
+        countDown();
+    });
+    function countDown() {
+        var remainSeconds=$("#remainSeconds").val();
+        var timeout;
+        //秒杀未开始，倒计时
+        if (remainSeconds>0){
+            $("#buyButton").attr("disabled",true);
+            timeout=setTimeout(function () {
+                $("#countDown").text(remainSeconds-1);
+                $("#remainSeconds").val(remainSeconds-1);
+                countDown();
+            },1000)
+        }else if(remainSeconds==0){
+            $("#buyButton").attr("disabled",false);
+            clearTimeout(timeout);
+            $("#seckillTip").html("秒杀进行中");
+        }else {
+            $("#seckillTip").html("秒杀已结束");
+            $("#buyButton").attr("disabled",true);
+        }
+    }
+</script>
 
 <!--<script>-->
 
