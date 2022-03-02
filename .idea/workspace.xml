@@ -26,21 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94e74c11-653e-4bca-9f4d-44f07b611f9e" name="Default Changelist" comment="使用Redis实现分布式Session">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/12072.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coffee/vo/GoodsVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SeckillGoodsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SeckillOrderMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coffee/annotation/UserParamResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coffee/config/LoginInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/config/UserArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/config/UserArgumentResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/mapper/GoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/mapper/GoodsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/service/IGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/service/IGoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goodsList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goodsList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/coffee/controller/goodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coffee/controller/goodsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/goodsList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/goodsList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +44,7 @@
       <list>
         <option value="HTML File" />
         <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -141,6 +134,8 @@
       <workItem from="1645929994196" duration="12950000" />
       <workItem from="1646018764069" duration="8410000" />
       <workItem from="1646114849146" duration="6914000" />
+      <workItem from="1646129753700" duration="271000" />
+      <workItem from="1646197103723" duration="5196000" />
     </task>
     <task id="LOCAL-00001" summary="使用Redis实现分布式Session">
       <created>1646025278528</created>
@@ -163,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646119850112</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="向数据库中添加数据,完成秒杀商品列表页&#10;GoodsVo同时查询商品表和秒杀商品表的返回对象">
+      <created>1646129976292</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646129976292</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,13 +186,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="使用Redis实现分布式Session" />
     <MESSAGE value="新建商品表，订单表，秒杀商品表，秒杀订单表，使用逆向工程生成所需要的类" />
-    <option name="LAST_COMMIT_MESSAGE" value="新建商品表，订单表，秒杀商品表，秒杀订单表，使用逆向工程生成所需要的类" />
+    <MESSAGE value="向数据库中添加数据,完成秒杀商品列表页&#10;GoodsVo同时查询商品表和秒杀商品表的返回对象" />
+    <option name="LAST_COMMIT_MESSAGE" value="向数据库中添加数据,完成秒杀商品列表页&#10;GoodsVo同时查询商品表和秒杀商品表的返回对象" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="937" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1646125052396">
+    <state x="937" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1646204457212">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="937" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1646125052396" />
+    <state x="937" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1646204457212" />
     <state x="820" y="355" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1645689466736">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -207,38 +210,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="308" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1646120015528" />
-    <state width="1150" height="92" key="GridCell.Tab.0.bottom" timestamp="1646129701671">
+    <state width="1150" height="112" key="GridCell.Tab.0.bottom" timestamp="1646206358417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1150" height="92" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646129701671" />
-    <state width="1150" height="92" key="GridCell.Tab.0.center" timestamp="1646129701671">
+    <state width="1150" height="112" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646206358417" />
+    <state width="1150" height="112" key="GridCell.Tab.0.center" timestamp="1646206358417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1150" height="92" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1646129701671" />
-    <state width="1150" height="92" key="GridCell.Tab.0.left" timestamp="1646129701671">
+    <state width="1150" height="112" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1646206358417" />
+    <state width="1150" height="112" key="GridCell.Tab.0.left" timestamp="1646206358417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1150" height="92" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1646129701671" />
-    <state width="1150" height="92" key="GridCell.Tab.0.right" timestamp="1646129701671">
+    <state width="1150" height="112" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1646206358417" />
+    <state width="1150" height="112" key="GridCell.Tab.0.right" timestamp="1646206358417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1150" height="92" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1646129701671" />
-    <state width="1150" height="115" key="GridCell.Tab.1.bottom" timestamp="1646129701655">
+    <state width="1150" height="112" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1646206358417" />
+    <state width="1150" height="112" key="GridCell.Tab.1.bottom" timestamp="1646206358418">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1150" height="115" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646129701655" />
-    <state width="1150" height="115" key="GridCell.Tab.1.center" timestamp="1646129701655">
+    <state width="1150" height="112" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646206358418" />
+    <state width="1150" height="112" key="GridCell.Tab.1.center" timestamp="1646206358418">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1150" height="115" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1646129701655" />
-    <state width="1150" height="115" key="GridCell.Tab.1.left" timestamp="1646129701655">
+    <state width="1150" height="112" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1646206358418" />
+    <state width="1150" height="112" key="GridCell.Tab.1.left" timestamp="1646206358418">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1150" height="115" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1646129701655" />
-    <state width="1150" height="115" key="GridCell.Tab.1.right" timestamp="1646129701655">
+    <state width="1150" height="112" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1646206358418" />
+    <state width="1150" height="112" key="GridCell.Tab.1.right" timestamp="1646206358418">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1150" height="115" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1646129701655" />
+    <state width="1150" height="112" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1646206358418" />
     <state width="1236" height="136" key="GridCell.Tab.2.bottom" timestamp="1645946837550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -283,9 +286,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1645524613324" />
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1645945811751">
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1646206298481">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1645945811751" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1646206298481" />
   </component>
 </project>
