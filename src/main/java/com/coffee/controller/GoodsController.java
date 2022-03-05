@@ -44,6 +44,9 @@ public class GoodsController {
         int seckillStatus=0;
         //秒杀倒计时
         int remainSeconds=0;
+        //秒杀持续时间
+        int duringSeconds=(int)((endTime.getTime()-startTime.getTime())/1000);
+
         //秒杀还未开始
         if (nowDate.before(startTime)){
             remainSeconds=(int)((startTime.getTime()-nowDate.getTime())/1000);
@@ -58,10 +61,11 @@ public class GoodsController {
             seckillStatus=1;
             remainSeconds=0;
         }
+        model.addAttribute("duringSeconds",duringSeconds);
         model.addAttribute("seckillStatus",seckillStatus);
         model.addAttribute("remainSeconds",remainSeconds);
-        model.addAttribute("goods",goodsVo);
 
+        model.addAttribute("goods",goodsVo);
         return "goodsDetail";
     }
 }
