@@ -26,10 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94e74c11-653e-4bca-9f4d-44f07b611f9e" name="Default Changelist" comment="使用Redis实现分布式Session">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coffee/controller/SeckillController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/service/IOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coffee/vo/RespBeanEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coffee/vo/RespBeanEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goodsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goodsDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coffee/controller/goodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coffee/controller/goodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/orderDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/orderDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/goodsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/goodsDetail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +138,7 @@
       <workItem from="1646129753700" duration="271000" />
       <workItem from="1646197103723" duration="15868000" />
       <workItem from="1646304011354" duration="691000" />
-      <workItem from="1646370961757" duration="3859000" />
+      <workItem from="1646370961757" duration="10189000" />
     </task>
     <task id="LOCAL-00001" summary="使用Redis实现分布式Session">
       <created>1646025278528</created>
@@ -186,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646218740387</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="前端优化秒杀倒计时刷新功能">
+      <created>1646452982555</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1646452982555</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,13 +221,14 @@
     <MESSAGE value="1.通过参数解析器在调用接口之前获得user对象,在每个接口判断用户是否为空再去跳转&#10;通过实现addInterceptors方法传入自定义拦截器实现&#10;2.修改拦截器，将user对象保存到request" />
     <MESSAGE value="完成商品详情页的创建，在goodsController中添加一个跳转页面方法toDetail" />
     <MESSAGE value="添加秒杀倒计时&#10;在当前秒杀范围内显示秒杀按钮，未到时间显示倒计时，过时秒杀按钮变灰" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加秒杀倒计时&#10;在当前秒杀范围内显示秒杀按钮，未到时间显示倒计时，过时秒杀按钮变灰" />
+    <MESSAGE value="前端优化秒杀倒计时刷新功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端优化秒杀倒计时刷新功能" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="937" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1646210059098">
+    <state x="937" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1646457570999">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="937" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1646210059098" />
+    <state x="937" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1646457570999" />
     <state x="820" y="355" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1645689466736">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -234,38 +245,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="308" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1646120015528" />
-    <state width="944" height="116" key="GridCell.Tab.0.bottom" timestamp="1646380371668">
+    <state width="1020" height="93" key="GridCell.Tab.0.bottom" timestamp="1646459593691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="944" height="116" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646380371668" />
-    <state width="944" height="116" key="GridCell.Tab.0.center" timestamp="1646380371668">
+    <state width="1020" height="93" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646459593691" />
+    <state width="1020" height="93" key="GridCell.Tab.0.center" timestamp="1646459593690">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="944" height="116" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1646380371668" />
-    <state width="944" height="116" key="GridCell.Tab.0.left" timestamp="1646380371668">
+    <state width="1020" height="93" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1646459593690" />
+    <state width="1020" height="93" key="GridCell.Tab.0.left" timestamp="1646459593690">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="944" height="116" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1646380371668" />
-    <state width="944" height="116" key="GridCell.Tab.0.right" timestamp="1646380371668">
+    <state width="1020" height="93" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1646459593690" />
+    <state width="1020" height="93" key="GridCell.Tab.0.right" timestamp="1646459593691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="944" height="116" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1646380371668" />
-    <state width="944" height="116" key="GridCell.Tab.1.bottom" timestamp="1646380371669">
+    <state width="1020" height="93" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1646459593691" />
+    <state width="1020" height="93" key="GridCell.Tab.1.bottom" timestamp="1646459593691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="944" height="116" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646380371669" />
-    <state width="944" height="116" key="GridCell.Tab.1.center" timestamp="1646380371669">
+    <state width="1020" height="93" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646459593691" />
+    <state width="1020" height="93" key="GridCell.Tab.1.center" timestamp="1646459593691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="944" height="116" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1646380371669" />
-    <state width="944" height="116" key="GridCell.Tab.1.left" timestamp="1646380371668">
+    <state width="1020" height="93" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1646459593691" />
+    <state width="1020" height="93" key="GridCell.Tab.1.left" timestamp="1646459593691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="944" height="116" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1646380371668" />
-    <state width="944" height="116" key="GridCell.Tab.1.right" timestamp="1646380371669">
+    <state width="1020" height="93" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1646459593691" />
+    <state width="1020" height="93" key="GridCell.Tab.1.right" timestamp="1646459593691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="944" height="116" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1646380371669" />
+    <state width="1020" height="93" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1646459593691" />
     <state width="1236" height="136" key="GridCell.Tab.2.bottom" timestamp="1645946837550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -314,5 +325,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1646206298481" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/coffee/service/impl/OrderServiceImpl.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
