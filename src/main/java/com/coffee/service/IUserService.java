@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public interface IUserService extends IService<User> {
 
-    RespBean login(LoginVo loginVo, HttpServletRequest request, HttpServletResponse response);
+    RespBean login(LoginVo loginVo);
 
-    User getUserByCookie(String ticket,HttpServletRequest request,HttpServletResponse response);
+//    User getUserByCookie(String ticket,HttpServletRequest request,HttpServletResponse response);
 
 }

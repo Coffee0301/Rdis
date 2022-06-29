@@ -15,6 +15,8 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/login")
 public class LoginController {
+
+
     @Autowired
     IUserService userService;
 
@@ -26,8 +28,8 @@ public class LoginController {
 
     @RequestMapping("/doLogin")
     @ResponseBody
-    public RespBean doLogin(@Valid LoginVo loginVo, HttpServletRequest request, HttpServletResponse response){
-        return userService.login(loginVo,request,response);
+    public RespBean doLogin(@Valid LoginVo loginVo){
+        return userService.login(loginVo);
     }
 
 }

@@ -2,16 +2,14 @@ package com.coffee.vo;
 
 
 import com.coffee.validator.IsMobile;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoginVo {

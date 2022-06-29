@@ -1,0 +1,298 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.coffee.service.IUserService",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1355030580 { 
+   	label=coffee
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_427218012 { 
+   	label=config
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   UserArgumentResolver1094733321[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserArgumentResolver</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   userService: IUserService [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ resolveArgument(parameter: MethodParameter, mavContainer: ModelAndViewContainer, webRequest: NativeWebRequest, binderFactory: WebDataBinderFactory): Object</TD></TR>
+<TR><TD ALIGN="LEFT" >+ supportsParameter(parameter: MethodParameter): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+WebConfig1094733321[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)WebConfig</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   loginInterceptor: LoginInterceptor [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   userArgumentResolver: UserArgumentResolver [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addArgumentResolvers(resolvers: List&lt;HandlerMethodArgumentResolver&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addResourceHandlers(registry: ResourceHandlerRegistry)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_557175823 { 
+   	label=utils
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   MD5Util1505474396[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MD5Util</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ fromPassToDBPass(str: String, salt: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ inputPassToFromPass(inputPass: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+<TR><TD ALIGN="LEFT" >+ md5(str: String): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UUIDUtil1505474396[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UUIDUtil</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ uuid(): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_674179731 { 
+   	label=service
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   IUserService1456041632[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(I)IUserService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getUserByCookie(ticket: String, request: HttpServletRequest, response: HttpServletResponse): User</TD></TR>
+<TR><TD ALIGN="LEFT" >+ login(loginVo: LoginVo, request: HttpServletRequest, response: HttpServletResponse): RespBean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#F1E5FD"
+];
+
+UserServiceImpl1202475182[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserServiceImpl</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   redisTemplate: RedisTemplate [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   userMapper: UserMapper [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getUserByCookie(ticket: String, request: HttpServletRequest, response: HttpServletResponse): User</TD></TR>
+<TR><TD ALIGN="LEFT" >+ login(loginVo: LoginVo, request: HttpServletRequest, response: HttpServletResponse): RespBean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_681654299 { 
+   	label=vo
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   RespBean98951150[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)RespBean</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   code: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   message: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   object: Object [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># canEqual(other: Object): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ error(respBeanEnum: RespBeanEnum): RespBean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ error(respBeanEnum: RespBeanEnum, obj: Object): RespBean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ success(): RespBean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ success(obj: Object): RespBean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_711390466 { 
+   	label=controller
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   GoodsController128856017[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GoodsController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   goodsService: IGoodsService [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   userService: IUserService [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ toDetail(model: Model, user: User, goodsId: Long): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ toList(model: Model, user: User): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LoginController128856017[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LoginController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   userService: IUserService [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ doLogin(loginVo: LoginVo, request: HttpServletRequest, response: HttpServletResponse): RespBean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ toLogin(): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserController128856017[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   userService: IUserService [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ hello(model: Model): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ info(user: User): RespBean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+GoodsController128856017 -> IUserService1456041632[label="userService
+[1]"];
+IUserService1456041632 -> UserServiceImpl1202475182[arrowhead=none, arrowtail=empty, dir=both];
+LoginController128856017 -> IUserService1456041632[label="userService
+[1]"];
+UserArgumentResolver1094733321 -> IUserService1456041632[label="userService
+[1]"];
+UserController128856017 -> IUserService1456041632[label="userService
+[1]"];
+UserServiceImpl1202475182 -> MD5Util1505474396[label="login() -> fromPassToDBPass()"];
+UserServiceImpl1202475182 -> RespBean98951150[label="login() -> success()"];
+UserServiceImpl1202475182 -> UUIDUtil1505474396[label="login() -> uuid()"];
+WebConfig1094733321 -> UserArgumentResolver1094733321[label="userArgumentResolver
+[1]"];
+    
+}
+@enduml

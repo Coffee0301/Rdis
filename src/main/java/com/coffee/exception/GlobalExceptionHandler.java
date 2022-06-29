@@ -2,17 +2,19 @@ package com.coffee.exception;
 
 import com.coffee.vo.RespBean;
 import com.coffee.vo.RespBeanEnum;
+import org.springframework.context.annotation.Import;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 
+/**
+ * @author 12072
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
-    public RespBean ExceptionHandler(Exception e){
-
-        Class<? extends Exception> aClass=e.getClass();
+    public RespBean exceptionHandler(Exception e){
 
         if (e instanceof GlobalException){
             GlobalException e1=(GlobalException) e;
